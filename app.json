@@ -1,32 +1,31 @@
 {
   "expo": {
-    "name": "valeeeu",
-    "slug": "valeeeu",
+    "name": "Valeeeu!",
+    "slug": "Valeeeu",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "scheme": "com.viniciuslucas95.valeeeu",
+    "facebookScheme": "fb475115013540188",
+    "icon": "./src/assets/images/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./src/assets/images/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#834FD9"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.viniciuslucas95.valeeeu"
     },
     "android": {
+      "package": "com.viniciuslucas95.valeeeu",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "foregroundImage": "./src/assets/images/adaptive-icon.png",
+        "backgroundColor": "#834FD9"
       }
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
     }
   }
 }
