@@ -1,10 +1,13 @@
 import React from 'react';
+import { setStatusBarStyle } from 'expo-status-bar';
 
 import { Container } from '../CreateAccountPage/styles';
 import { vh } from '../../helpers/units';
 import { Input, Button, Separator } from '../../components';
 
 export function CreateAccountPage() {
+  setStatusBarStyle('light');
+
   return (
     <Container>
       <Separator style={{ marginTop: vh(2) }}>Criar conta</Separator>

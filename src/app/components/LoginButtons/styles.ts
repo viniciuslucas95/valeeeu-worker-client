@@ -27,7 +27,7 @@ export const ButtonContainer = styled.View<IProps>`
       ? theme.googleHighlight
       : theme.google};
   flex-direction: row;
-  width: ${sizes.elementMaxWidth};
+  width: ${vwPx(80)};
   height: ${sizes.elementHeight};
   border-radius: ${vwPx(10)};
   padding: 0 ${vwPx(1.5)};

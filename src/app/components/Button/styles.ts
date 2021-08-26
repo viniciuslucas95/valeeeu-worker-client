@@ -21,7 +21,7 @@ export const ButtonContainer = styled.View<IProps>`
       : highlight
       ? theme.purpleHighlight
       : theme.purple};
-  width: ${sizes.elementMaxWidth};
+  width: ${vwPx(80)};
   height: ${sizes.elementHeight};
   border-radius: ${vwPx(10)};
   border-color: ${({ secondary, highlight }) =>

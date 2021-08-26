@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
+import { setStatusBarStyle } from 'expo-status-bar';
 
 import { Container, OptionsContainer } from './styles';
 import {
   FacebookLoginButton,
   GoogleLoginButton,
 } from '../../components/LoginButtons';
-import { vh } from '../../helpers/units';
+import { vh, vwPx } from '../../helpers/units';
 import { Separator, Input, CheckBox, Link, Button } from '../../components';
 import { useFacebookLoginApi, useGoogleLoginApi } from '../../hooks/loginApis';
 import { apiConfig } from '../../../configs/constants';
 import { StackScreens } from '../enums';
 import { useContext } from 'react';
 import { loginContext } from '../../contexts';
+import { LogoSvg } from '../../../assets/svgs';
 
 export function LoginPage({ navigation }: any) {
   const {
@@ -35,9 +37,13 @@ export function LoginPage({ navigation }: any) {
   const [isRememberingPassword, setIsRememberingPassword] = useState(false);
   const isFetchingData = isFacebookFetchingData || isGoogleFetchingData;
 
+  setStatusBarStyle('light');
+
   return (
     <Container>
+      <LogoSvg secondary />
       <FacebookLoginButton
+        style={{ marginTop: vh(4) }}
         isFetchingData={isFetchingData}
         fetchDataAsync={fetchFacebookDataAsync}
       />
@@ -46,7 +52,9 @@ export function LoginPage({ navigation }: any) {
         isFetchingData={isFetchingData}
         fetchDataAsync={fetchGoogleDataAsync}
       />
-      <Separator style={{ marginTop: vh(1.5) }}>ou</Separator>
+      <Separator style={{ marginTop: vh(1.5) }} secondary>
+        ou
+      </Separator>
       <Input style={{ marginTop: vh(1.5) }} placeholder='Email' />
       <Input style={{ marginTop: vh(1) }} placeholder='Senha' isSecure={true} />
       <OptionsContainer style={{ marginTop: vh(1.5) }}>
@@ -66,9 +74,11 @@ export function LoginPage({ navigation }: any) {
       >
         Entrar
       </Button>
-      <Separator style={{ marginTop: vh(1.5) }}>Não tem conta?</Separator>
+      <Separator style={{ marginTop: vh(1.5) }} secondary>
+        Não tem conta?
+      </Separator>
       <Button
-        style={{ marginTop: vh(1.5) }}
+        style={{ marginTop: vh(1.5), marginBottom: vh(4) }}
         secondary
         onPress={() => navigation.navigate(StackScreens.CreateAccount)}
       >

@@ -13,7 +13,7 @@ export const Container = styled.View`
 export const OptionsContainer = styled.View`
   flex-direction: row;
   justify-content: space-between;
-  width: ${sizes.elementMaxWidth};
+  width: ${vwPx(80)};
   height: ${vhPx(3)};
   padding: 0 ${vwPx(1)};
 `;

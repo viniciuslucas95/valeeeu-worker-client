@@ -1,9 +1,9 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-
 import { StackScreens } from '../../enums';
 import { WorkPage } from '../..';
-import { Header } from '../../../components';
+import { headerStyle } from './styles';
+import { MenuButton } from './components/MenuButton';
 
 const Stack = createStackNavigator();
 
@@ -14,9 +14,9 @@ export function WorkStackNavigator() {
         name={StackScreens.Work}
         component={WorkPage}
         options={{
-          header: ({ navigation }) => (
-            <Header navigation={navigation}>Trabalho</Header>
-          ),
+          headerTitle: 'Trabalho',
+          ...headerStyle,
+          headerRight: () => <MenuButton />,
         }}
       />
     </Stack.Navigator>

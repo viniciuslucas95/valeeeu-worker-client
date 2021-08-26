@@ -15,7 +15,7 @@ export function MessageStackNavigator() {
         component={MessagePage}
         options={{
           header: ({ navigation }) => (
-            <Header navigation={navigation}>Mensagens</Header>
+            <Header navigation={navigation} title='Mensagens' />
           ),
         }}
       />

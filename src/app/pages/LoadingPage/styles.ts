@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-
 import { theme } from '../../../configs/constants';
 import { vhPx, vwPx } from '../../helpers/units';
 
@@ -11,3 +10,5 @@ export const Container = styled.View`
   align-items: center;
   background-color: ${theme.purple};
 `;
+
+export const Logo = styled.Image``;

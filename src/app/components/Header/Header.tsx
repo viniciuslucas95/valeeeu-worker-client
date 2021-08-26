@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useState } from 'react';
+import React, { useState } from 'react';
 
 import {
   Container,
@@ -13,19 +13,22 @@ import { theme } from '../../../configs/constants';
 import { vw } from '../../helpers/units';
 
 interface IProps {
+  title?: any;
+  secondary?: boolean;
   navigation: any;
   showBackButton?: boolean;
 }
 
 export function Header({
-  children,
+  secondary,
+  title,
   navigation,
   showBackButton,
-}: PropsWithChildren<IProps>) {
+}: IProps) {
   const [isHighlighting, setIsHighlighting] = useState(false);
 
   return (
-    <Container>
+    <Container secondary={secondary}>
       <ButtonContainer>
         {showBackButton ? (
           <TouchableContainer
@@ -43,7 +46,11 @@ export function Header({
         ) : null}
       </ButtonContainer>
       <TitleContainer>
-        <Text>{children}</Text>
+        {typeof title === 'object' ? (
+          title
+        ) : (
+          <Text secondary={secondary}>{title}</Text>
+        )}
       </TitleContainer>
       <ButtonContainer>
         <TouchableContainer>

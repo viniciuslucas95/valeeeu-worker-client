@@ -1,33 +1,41 @@
 import * as React from 'react';
+import { StyleProp, ViewStyle } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
-
 import { vw } from '../../../app/helpers/units';
 import { theme } from '../../../configs/constants';
 
 interface IProps {
-  thick?: boolean;
+  active?: boolean;
   size?: number;
-  style?: any;
+  style?: StyleProp<ViewStyle>;
 }
 
-export function ScheduleIcon({ thick, size, style }: IProps) {
-  const fixedSize = (size ?? vw(1)) / 4;
+export function ScheduleIcon({ active, size, style }: IProps) {
+  const fixedSize = (size ?? vw(1)) / 3;
 
   return (
     <Svg
-      width={32 * fixedSize}
-      height={32 * fixedSize}
-      viewBox='0 0 32 32'
+      width={22 * fixedSize}
+      height={22 * fixedSize}
+      viewBox='0 0 22 22'
       fill='none'
-      xmlns='http://www.w3.org/2000/svg'
-      {...style}
+      style={style}
     >
-      <Path
-        d='M23.5 15.5h-5.75V8h-3.5v11H24v-3.5h-.5zM16 4c6.616 0 12 5.384 12 12s-5.384 12-12 12S4 22.616 4 16 9.384 4 16 4zm0-3.5C7.44.5.5 7.44.5 16c0 8.56 6.94 15.5 15.5 15.5 8.56 0 15.5-6.94 15.5-15.5C31.5 7.44 24.56.5 16 .5z'
-        fill={theme.white}
-        stroke={thick ? theme.white : theme.purple}
-        strokeWidth={thick ? 0.5 : 1}
-      />
+      {active ? (
+        <Path
+          d='M11.817 11v.1H16.4v1.633h-6.217V5.6h1.634V11zm8.45 0c0-5.11-4.157-9.267-9.267-9.267-5.11 0-9.267 4.157-9.267 9.267 0 5.11 4.157 9.267 9.267 9.267 5.11 0 9.267-4.157 9.267-9.267zM.1 11C.1 4.98 4.98.1 11 .1 17.02.1 21.9 4.98 21.9 11c0 6.02-4.88 10.9-10.9 10.9C4.98 21.9.1 17.02.1 11z'
+          fill={theme.white}
+          stroke={theme.purple}
+          strokeWidth={0}
+        />
+      ) : (
+        <Path
+          d='M11.717 11v.2H16.3v1.433h-6.017V5.7h1.434V11zm8.65 0c0-5.165-4.202-9.367-9.367-9.367-5.165 0-9.367 4.202-9.367 9.367 0 5.165 4.202 9.367 9.367 9.367 5.165 0 9.367-4.202 9.367-9.367zM.2 11C.2 5.036 5.036.2 11 .2S21.8 5.036 21.8 11 16.964 21.8 11 21.8.2 16.964.2 11z'
+          fill={theme.white}
+          stroke={theme.purple}
+          strokeWidth={0.4}
+        />
+      )}
     </Svg>
   );
 }

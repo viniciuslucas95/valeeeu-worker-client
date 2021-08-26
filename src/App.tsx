@@ -2,22 +2,23 @@ import 'react-native-gesture-handler';
 import { registerRootComponent } from 'expo';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-
-import { LoadingPage } from './app/pages';
 import { Navigator } from './app/pages/Navigator';
-import { LoginProvider } from './app/contexts';
+import { LoginProvider, WorkProvider } from './app/contexts';
 import { useFonts } from './app/hooks/useFonts';
+import AppLoading from 'expo-app-loading';
 
 export default function App() {
   const { isLoaded } = useFonts();
 
-  if (!isLoaded) return <LoadingPage />;
+  if (!isLoaded) return <AppLoading />;
 
   return (
     <LoginProvider>
-      <NavigationContainer>
-        <Navigator />
-      </NavigationContainer>
+      <WorkProvider>
+        <NavigationContainer>
+          <Navigator />
+        </NavigationContainer>
+      </WorkProvider>
     </LoginProvider>
   );
 }

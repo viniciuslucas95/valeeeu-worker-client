@@ -1,22 +1,27 @@
 import styled from 'styled-components/native';
+import { theme } from '../../../configs/constants';
+import { vwPx } from '../../helpers/units';
 
-import { sizes, theme } from '../../../configs/constants';
-import { vhPx, vwPx } from '../../helpers/units';
+interface IProps {
+  size?: string;
+  secondary?: boolean;
+}
 
-export const Container = styled.View`
-  width: ${sizes.elementMaxWidth};
+export const Container = styled.View<IProps>`
+  width: ${({ size }) => size};
   flex-direction: row;
   align-items: center;
 `;
 
-export const Line = styled.View`
-  background-color: ${theme.purple};
+export const Line = styled.View<IProps>`
+  background-color: ${({ secondary }) =>
+    secondary ? theme.purple : theme.white};
   height: 1px;
   flex: 1;
 `;
 
-export const Text = styled.Text`
-  font-family: 'Poppins-Light';
-  color: ${theme.purple};
+export const Text = styled.Text<IProps>`
+  font-family: 'Poppins-Medium';
+  color: ${({ secondary }) => (secondary ? theme.purple : theme.white)};
   margin: 0 ${vwPx(3)};
 `;

@@ -4,3 +4,6 @@ export { CheckBox } from './CheckBox';
 export { Link } from './Link';
 export { Button } from './Button';
 export { Header } from './Header';
+export { WorkToggle } from './WorkToggle';
+export { Toggle } from './Toggle';
+export { Touchable } from './Touchable';

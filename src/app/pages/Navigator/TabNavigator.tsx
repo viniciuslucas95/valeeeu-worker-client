@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
 import {
   WorkStackNavigator,
   MessageStackNavigator,
@@ -15,12 +14,13 @@ import {
 } from '../../../assets/svgs/icons';
 import { TabScreens } from '../enums';
 import { vh, vw } from '../../helpers/units';
-import { loginContext } from '../../contexts';
+import { loginContext, workContext } from '../../contexts';
 
 const Tab = createBottomTabNavigator();
 
 export function TabNavigator() {
   const { account } = useContext(loginContext);
+  const { isWorking } = useContext(workContext);
 
   return (
     <>
@@ -29,16 +29,21 @@ export function TabNavigator() {
           screenOptions={({ route }) => ({
             tabBarIcon: ({ focused }) => {
               if (route.name === TabScreens.Work)
-                return <WorkIcon thick={focused} />;
+                return (
+                  <WorkIcon active={focused} style={{ bottom: vh(0.25) }} />
+                );
               if (route.name === TabScreens.Message)
-                return <MessageIcon thick={focused} />;
+                return (
+                  <MessageIcon active={focused} style={{ top: vh(0.25) }} />
+                );
               if (route.name === TabScreens.Schedule)
-                return <ScheduleIcon thick={focused} />;
+                return <ScheduleIcon active={focused} />;
             },
             tabBarActiveBackgroundColor: theme.purple,
             tabBarInactiveBackgroundColor: theme.purple,
             headerShown: false,
             tabBarShowLabel: false,
+            tabBarStyle: { borderTopColor: theme.purpleHighlight },
           })}
         >
           <Tab.Screen
@@ -47,14 +52,15 @@ export function TabNavigator() {
             options={{
               tabBarBadge: '',
               tabBarBadgeStyle: {
-                backgroundColor: theme.green,
-                top: vh(3.25),
-                left: vw(1.75),
-                width: vh(2),
-                height: vh(2),
-                minWidth: 1,
-                minHeight: 1,
+                backgroundColor: isWorking ? theme.green : theme.mediumGray,
+                top: vh(3.5),
+                left: vw(2),
+                width: vh(1.75),
+                height: vh(1.75),
+                minWidth: 0,
+                minHeight: 0,
                 borderRadius: vh(1),
+                opacity: isWorking ? 1 : 0,
               },
             }}
           />

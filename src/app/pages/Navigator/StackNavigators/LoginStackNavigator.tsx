@@ -15,7 +15,7 @@ export function LoginStackNavigator() {
         component={LoginPage}
         options={{
           header: ({ navigation }) => (
-            <Header navigation={navigation}>Login</Header>
+            <Header navigation={navigation} title='Login' secondary />
           ),
         }}
       />
@@ -24,7 +24,7 @@ export function LoginStackNavigator() {
         component={CreateAccountPage}
         options={{
           header: ({ navigation }) => (
-            <Header navigation={navigation}>Criar Conta</Header>
+            <Header navigation={navigation} title='Criar Conta' secondary />
           ),
         }}
       />

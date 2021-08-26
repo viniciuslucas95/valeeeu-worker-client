@@ -8,7 +8,7 @@
     "facebookScheme": "fb475115013540188",
     "icon": "./src/assets/images/icon.png",
     "splash": {
-      "image": "./src/assets/images/splash.png",
+      "image": "./src/assets/images/icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#834FD9"
     },

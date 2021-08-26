@@ -8,6 +8,7 @@ export const theme = {
   purple: '#834FD9',
   purpleHighlight: '#774DBC',
   green: '#41e43b',
+  red: '#FF3A2E',
   facebook: '#1877F2',
   facebookHighlight: '#145dbe',
   google: '#4285F4',

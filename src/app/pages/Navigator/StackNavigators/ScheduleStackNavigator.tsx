@@ -15,7 +15,7 @@ export function ScheduleStackNavigator() {
         component={SchedulePage}
         options={{
           header: ({ navigation }) => (
-            <Header navigation={navigation}>Agendamentos</Header>
+            <Header navigation={navigation} title='Agendamentos' />
           ),
         }}
       />
