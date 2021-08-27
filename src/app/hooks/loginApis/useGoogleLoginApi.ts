@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import * as Google from 'expo-auth-session/providers/google';
-
 import { IUser } from './interfaces';
 
 export function useGoogleLoginApi(

@@ -12,7 +12,7 @@ export function DescriptionSection({ text }: IProps) {
   return (
     <SeparatorContainer separatorText='Descrição'>
       <Text style={{ marginTop: vh(1) }}>{text}</Text>
-      <Button style={{ marginTop: vh(2) }}>Editar</Button>
+      <Button style={{ marginTop: vh(2), marginBottom: vh(2) }}>Editar</Button>
     </SeparatorContainer>
   );
 }

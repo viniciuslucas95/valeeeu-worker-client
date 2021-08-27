@@ -1,24 +1,16 @@
 import React from 'react';
 import { ImageSourcePropType } from 'react-native';
 import { Button } from '../../../../components';
-import { vh, vw, vwPx } from '../../../../helpers/units';
+import { vh, vwPx } from '../../../../helpers/units';
 import { SeparatorContainer } from '../SeparatorContainer';
 import { PictureGrid } from './PictureGrid';
+import { ButtonsContainer } from './styles';
 
-const car = require('../../../../../test/data/car.jpg');
-const panicat = require('../../../../../test/data/panicat.jpg');
+interface IProps {
+  pictures: ImageSourcePropType[];
+}
 
-const pictures: ImageSourcePropType[] = [
-  car,
-  panicat,
-  car,
-  panicat,
-  car,
-  panicat,
-  car,
-];
-
-export function PictureSection() {
+export function PictureSection({ pictures }: IProps) {
   return (
     <SeparatorContainer separatorText='Fotos'>
       <PictureGrid
@@ -27,7 +19,14 @@ export function PictureSection() {
         width={vwPx(90)}
         columns={3}
       />
-      <Button style={{ marginTop: vh(2) }}>Ver Mais</Button>
+      <ButtonsContainer style={{ marginTop: vh(1) }}>
+        {pictures.length > 6 ? (
+          <Button width={vwPx(44)}>Ver Mais</Button>
+        ) : null}
+        <Button secondary width={pictures.length > 6 ? vwPx(44) : vwPx(90)}>
+          Editar
+        </Button>
+      </ButtonsContainer>
     </SeparatorContainer>
   );
 }

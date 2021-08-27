@@ -1,4 +1,4 @@
-export const apiConfig = {
+export const apis = {
   facebookId: '475115013540188',
   googleExpoId:
     '952997106601-39g5g9g08v1v0a54fuc120gochvufham.apps.googleusercontent.com',

@@ -1,3 +1,3 @@
-export { theme } from './theme';
+export { colors } from './colors';
 export { sizes } from './sizes';
-export { apiConfig } from './apiConfig';
+export { apis } from './apis';

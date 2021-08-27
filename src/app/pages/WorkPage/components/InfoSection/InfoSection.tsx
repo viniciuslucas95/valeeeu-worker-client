@@ -11,7 +11,7 @@ import {
 } from './styles';
 import { vh, vw } from '../../../../helpers/units';
 import { ItemContainer } from '../ItemContainer';
-import { Button } from '../../../../components';
+import { Button, Sizes } from '../../../../components';
 import { IInfo } from '../../interfaces';
 import { BoostIcon } from '../../../../../assets/svgs/icons';
 import { theme } from '../../../../../configs/constants';
@@ -30,7 +30,7 @@ export function InfoSection({ photo, name, job, category, methods }: IInfo) {
           </Job>
           <Button
             style={{ marginTop: vh(2) }}
-            small
+            size={Sizes.small}
             width={'100%'}
             secondary
             icon={

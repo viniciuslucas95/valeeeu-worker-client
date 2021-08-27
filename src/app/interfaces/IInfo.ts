@@ -1,6 +1,6 @@
 import { ImageSourcePropType } from 'react-native';
 
-export interface IInfo {
+export interface IWorkerInfo {
   photo: ImageSourcePropType;
   name: string;
   job: string;
@@ -8,4 +8,5 @@ export interface IInfo {
   methods: string[];
   tags: string[];
   description: string;
+  pictures: ImageSourcePropType[];
 }

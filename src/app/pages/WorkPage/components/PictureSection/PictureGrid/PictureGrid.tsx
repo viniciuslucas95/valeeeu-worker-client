@@ -5,7 +5,8 @@ import {
   StyleProp,
   ViewStyle,
 } from 'react-native';
-import { vh, vw, vwPx } from '../../../../../helpers/units';
+import { Touchable } from '../../../../../components';
+import { vh } from '../../../../../helpers/units';
 import { Picture } from './styles';
 
 interface IProps {
@@ -21,9 +22,13 @@ export function PictureGrid({ style, pictures, columns, width }: IProps) {
 
   return (
     <FlatList
-      data={pictures}
+      data={pictures.slice(0, 6)}
       keyExtractor={(_, index) => index.toString()}
-      renderItem={({ item }) => <Picture source={item} />}
+      renderItem={({ item, index }) => (
+        <Touchable onPress={() => console.log(index + ' picture pressed')}>
+          <Picture source={item} />
+        </Touchable>
+      )}
       numColumns={3}
       columnWrapperStyle={{
         flex: 1,

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import * as Facebook from 'expo-auth-session/providers/facebook';
-
 import { IUser } from './interfaces';
 
 export function useFacebookLoginApi(

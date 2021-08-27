@@ -1,16 +1,10 @@
 import * as React from 'react';
-import { StyleProp, ViewStyle } from 'react-native';
 import Svg, { Rect, Path } from 'react-native-svg';
 import { vw } from '../../../app/helpers/units';
-import { theme } from '../../../configs/constants';
+import { colors } from '../../../configs';
+import { IProps } from '../interfaces';
 
-interface IProps {
-  secondary?: boolean;
-  size?: number;
-  style?: StyleProp<ViewStyle>;
-}
-
-export function MenuIcon({ secondary, size, style }: IProps) {
+export function MenuIcon({ color, size, style }: IProps) {
   const fixedSize = (size ?? vw(1)) / 4;
 
   return (
@@ -26,18 +20,18 @@ export function MenuIcon({ secondary, size, style }: IProps) {
         width={26}
         height={2}
         rx={1}
-        fill={secondary ? theme.purple : theme.white}
+        fill={color ?? colors.purple}
       />
       <Rect
         y={9.804}
         width={26}
         height={2}
         rx={1}
-        fill={secondary ? theme.purple : theme.white}
+        fill={color ?? colors.purple}
       />
       <Path
         d='M0 1a1 1 0 011-1h24a1 1 0 110 2H1a1 1 0 01-1-1z'
-        fill={secondary ? theme.purple : theme.white}
+        fill={color ?? colors.purple}
       />
     </Svg>
   );

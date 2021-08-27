@@ -2,12 +2,13 @@ import styled from 'styled-components/native';
 
 import { theme, sizes } from '../../../configs/constants';
 import { vhPx, vwPx } from '../../helpers/units';
+import { Sizes } from '../enums';
 
 interface IProps {
   secondary?: boolean;
   highlight?: boolean;
   width?: string;
-  small?: boolean;
+  size?: Sizes;
 }
 
 export const Container = styled.View``;
@@ -24,8 +25,12 @@ export const ButtonContainer = styled.View<IProps>`
       ? theme.purpleHighlight
       : theme.purple};
   width: ${({ width }) => width ?? vwPx(90)};
-  height: ${({ small }) =>
-    small ? sizes.buttonSmallHeight : sizes.buttonHeight};
+  height: ${({ size }) =>
+    size === Sizes.small
+      ? sizes.buttonSmallHeight
+      : size === Sizes.big
+      ? sizes.buttonBigHeight
+      : sizes.buttonMediumHeight};
   border-radius: ${vwPx(10)};
   border-color: ${({ secondary, highlight }) =>
     secondary
@@ -43,8 +48,12 @@ export const ButtonContainer = styled.View<IProps>`
 export const Text = styled.Text<IProps>`
   top: ${vhPx(0.2)};
   font-family: 'Poppins-SemiBold';
-  font-size: ${({ small }) =>
-    small ? sizes.textSmallSize : sizes.textMediumSize};
+  font-size: ${({ size }) =>
+    size === Sizes.small
+      ? sizes.textSmall
+      : size === Sizes.big
+      ? sizes.textBig
+      : sizes.textMedium};
   color: ${({ secondary, highlight }) =>
     secondary
       ? highlight

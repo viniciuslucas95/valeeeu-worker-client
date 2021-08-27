@@ -1,12 +1,13 @@
-import { vhPx, vwPx } from '../../app/helpers/units';
+import { Unit } from '../../app/helpers';
+
+const { vwPx, vhPx } = Unit;
 
 export const sizes = {
   border: vwPx(0.25),
-  elementHeight: vhPx(6),
-  elementMediumWidth: vwPx(39),
-  buttonHeight: vhPx(4.5),
+  buttonBigHeight: vhPx(5.75),
+  buttonMediumHeight: vhPx(4.5),
   buttonSmallHeight: vhPx(3.25),
-  textBigSize: vwPx(4),
-  textMediumSize: vwPx(3.5),
-  textSmallSize: vwPx(3),
+  textBig: vwPx(4),
+  textMedium: vwPx(3.5),
+  textSmall: vwPx(3),
 };

@@ -1,5 +1,6 @@
 import React, { PropsWithChildren, useState } from 'react';
 import { StyleProp, ViewStyle } from 'react-native';
+import { Sizes } from '../enums';
 import { TouchableContainer, ButtonContainer, Text, Container } from './styles';
 
 interface IProps {
@@ -7,7 +8,7 @@ interface IProps {
   secondary?: boolean;
   style?: StyleProp<ViewStyle>;
   width?: string;
-  small?: boolean;
+  size?: Sizes;
   icon?: object;
 }
 
@@ -17,7 +18,7 @@ export function Button({
   style,
   secondary,
   icon,
-  small,
+  size,
   width,
 }: PropsWithChildren<IProps>) {
   const [isHighlighting, setIsHighlighting] = useState(false);
@@ -35,9 +36,13 @@ export function Button({
           secondary={secondary}
           highlight={isHighlighting}
           width={width}
-          small={small}
+          size={size ?? Sizes.medium}
         >
-          <Text secondary={secondary} small={small} highlight={isHighlighting}>
+          <Text
+            secondary={secondary}
+            size={size ?? Sizes.medium}
+            highlight={isHighlighting}
+          >
             {children}
           </Text>
           {icon}

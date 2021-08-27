@@ -7,7 +7,14 @@ import {
   GoogleLoginButton,
 } from '../../components/LoginButtons';
 import { vh, vwPx } from '../../helpers/units';
-import { Separator, Input, CheckBox, Link, Button } from '../../components';
+import {
+  Separator,
+  Input,
+  CheckBox,
+  Link,
+  Button,
+  Sizes,
+} from '../../components';
 import { useFacebookLoginApi, useGoogleLoginApi } from '../../hooks/loginApis';
 import { apiConfig } from '../../../configs/constants';
 import { StackScreens } from '../enums';
@@ -71,6 +78,8 @@ export function LoginPage({ navigation }: any) {
         onPress={() =>
           setAccount({ id: 123, name: 'test', email: 'test@gmail.com' })
         }
+        size={Sizes.big}
+        width={vwPx(80)}
       >
         Entrar
       </Button>
@@ -78,9 +87,11 @@ export function LoginPage({ navigation }: any) {
         Não tem conta?
       </Separator>
       <Button
+        size={Sizes.big}
         style={{ marginTop: vh(1.5), marginBottom: vh(4) }}
         secondary
         onPress={() => navigation.navigate(StackScreens.CreateAccount)}
+        width={vwPx(80)}
       >
         Criar Conta
       </Button>

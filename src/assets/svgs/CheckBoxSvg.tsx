@@ -1,23 +1,34 @@
 import * as React from 'react';
 import Svg, { Rect } from 'react-native-svg';
-
 import { vw } from '../../app/helpers/units';
-import { theme } from '../../configs/constants';
+import { colors } from '../../configs';
+import { IProps } from './interfaces';
 
-interface IProps {
-  size?: number;
-  filled?: boolean;
+interface ICheckBox extends IProps {
+  isChecked?: boolean;
+  strokeColor?: string;
+  checkedColor?: string;
+  checkedStrokeColor?: string;
 }
 
-export function CheckBoxSvg({ size, filled }: IProps) {
-  const adjustedSize = ((size ?? vw(1)) / 3.6) * 15;
+export function CheckBoxSvg({
+  size,
+  style,
+  color,
+  isChecked,
+  strokeColor,
+  checkedColor,
+  checkedStrokeColor,
+}: ICheckBox) {
+  const fixedSize = ((size ?? vw(1)) / 3.6) * 15;
 
   return (
     <Svg
-      width={adjustedSize}
-      height={adjustedSize}
+      width={fixedSize}
+      height={fixedSize}
       viewBox='0 0 15 15'
       fill='none'
+      style={style}
     >
       <Rect
         x={0.5}
@@ -25,8 +36,16 @@ export function CheckBoxSvg({ size, filled }: IProps) {
         width={14}
         height={14}
         rx={7}
-        fill={filled ? theme.darkGray : theme.white}
-        stroke={filled ? theme.darkGray : theme.mediumGray}
+        fill={
+          isChecked
+            ? checkedColor ?? colors.whiteHighlight
+            : color ?? colors.white
+        }
+        stroke={
+          isChecked
+            ? checkedStrokeColor ?? colors.purpleHighlight
+            : strokeColor ?? colors.purple
+        }
         strokeWidth={1}
       />
     </Svg>

@@ -1,15 +1,18 @@
 import * as React from 'react';
 import Svg, { Rect, Path } from 'react-native-svg';
+import { vw } from '../../../app/helpers/units';
+import { IProps } from '../interfaces';
 
-export function GoogleIcon(props: any) {
+export function GoogleIcon({ size, style }: IProps) {
+  const fixedSize = (size ?? vw(1)) / 4;
+
   return (
     <Svg
-      width={36}
-      height={36}
+      width={36 * fixedSize}
+      height={36 * fixedSize}
       viewBox='0 0 36 36'
       fill='none'
-      xmlns='http://www.w3.org/2000/svg'
-      {...props}
+      style={style}
     >
       <Rect width={36} height={36} rx={18} fill='#fff' />
       <Path

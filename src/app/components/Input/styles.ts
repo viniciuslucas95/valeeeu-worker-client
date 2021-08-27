@@ -10,8 +10,8 @@ interface IProps {
 
 export const Container = styled.TextInput<IProps>`
   width: ${({ size }) =>
-    size === Sizes.Medium ? sizes.elementMediumWidth : vwPx(80)};
-  height: ${sizes.elementHeight};
+    size === Sizes.medium ? sizes.elementMediumWidth : vwPx(80)};
+  height: ${sizes.buttonBigHeight};
   border: ${sizes.border} solid ${theme.purple};
   border-radius: ${vwPx(10)};
   background-color: ${theme.white};

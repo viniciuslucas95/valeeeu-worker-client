@@ -1,0 +1,1 @@
+export { workerInfo } from './workerInfo';
