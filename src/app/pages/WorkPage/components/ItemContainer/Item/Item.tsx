@@ -9,18 +9,28 @@ interface IProps {
   children: string;
   separator?: boolean;
   style?: StyleProp<ViewStyle>;
+  secondary?: boolean;
+  bold?: boolean;
 }
 
 export function Item({
   children,
   style,
   separator,
+  secondary,
+  bold,
 }: PropsWithChildren<IProps>) {
   return (
     <Container style={style}>
-      <Text>{children}</Text>
+      <Text secondary={secondary} bold={bold}>
+        {children}
+      </Text>
       {separator ? (
-        <CircleSvg color={theme.white} style={{ marginHorizontal: vw(1.5) }} />
+        <CircleSvg
+          color={secondary ? theme.purple : theme.white}
+          bold={bold}
+          style={{ marginHorizontal: vw(1.5) }}
+        />
       ) : null}
     </Container>
   );

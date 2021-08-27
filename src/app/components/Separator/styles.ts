@@ -8,7 +8,7 @@ interface IProps {
 }
 
 export const Container = styled.View<IProps>`
-  width: ${({ size }) => size};
+  width: ${({ size }) => size ?? vwPx(90)};
   flex-direction: row;
   align-items: center;
 `;
@@ -21,7 +21,8 @@ export const Line = styled.View<IProps>`
 `;
 
 export const Text = styled.Text<IProps>`
-  font-family: 'Poppins-Medium';
+  font-family: 'Poppins-Light';
   color: ${({ secondary }) => (secondary ? theme.purple : theme.white)};
   margin: 0 ${vwPx(3)};
+  font-size: ${vwPx(3.75)};
 `;

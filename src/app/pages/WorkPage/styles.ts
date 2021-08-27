@@ -9,6 +9,4 @@ export const Container = styled.View`
   background-color: ${theme.white};
 `;
 
-export const ScrollViewContainer = styled.ScrollView`
-  width: ${vwPx(100)};
-`;
+export const FlatListContainer = styled.FlatList``;

@@ -8,3 +8,4 @@ export { GoogleIcon } from './GoogleIcon';
 export { ScheduleIcon } from './ScheduleIcon';
 export { MenuIcon } from './MenuIcon';
 export { EditIcon } from './EditIcon';
+export { BoostIcon } from './BoostIcon';

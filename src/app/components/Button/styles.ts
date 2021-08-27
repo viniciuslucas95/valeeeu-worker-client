@@ -6,6 +6,8 @@ import { vhPx, vwPx } from '../../helpers/units';
 interface IProps {
   secondary?: boolean;
   highlight?: boolean;
+  width?: string;
+  small?: boolean;
 }
 
 export const Container = styled.View``;
@@ -21,8 +23,9 @@ export const ButtonContainer = styled.View<IProps>`
       : highlight
       ? theme.purpleHighlight
       : theme.purple};
-  width: ${vwPx(80)};
-  height: ${sizes.elementHeight};
+  width: ${({ width }) => width ?? vwPx(90)};
+  height: ${({ small }) =>
+    small ? sizes.buttonSmallHeight : sizes.buttonHeight};
   border-radius: ${vwPx(10)};
   border-color: ${({ secondary, highlight }) =>
     secondary
@@ -32,14 +35,16 @@ export const ButtonContainer = styled.View<IProps>`
       : theme.white};
   border-width: ${({ secondary }) => (secondary ? sizes.border : 0)};
   padding: 0 ${vwPx(2)};
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 `;
 
 export const Text = styled.Text<IProps>`
-  position: relative;
   top: ${vhPx(0.2)};
-  font-family: 'Poppins-Medium';
+  font-family: 'Poppins-SemiBold';
+  font-size: ${({ small }) =>
+    small ? sizes.textSmallSize : sizes.textMediumSize};
   color: ${({ secondary, highlight }) =>
     secondary
       ? highlight
@@ -48,5 +53,4 @@ export const Text = styled.Text<IProps>`
       : highlight
       ? theme.whiteHighlight
       : theme.white};
-  text-transform: uppercase;
 `;
