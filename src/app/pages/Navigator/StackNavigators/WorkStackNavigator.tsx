@@ -3,7 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { StackScreens } from '../../enums';
 import { WorkPage } from '../..';
 import { headerStyle } from './styles';
-import { MenuButton } from './components/MenuButton';
+import { MenuButton } from './components';
 
 const Stack = createStackNavigator();
 

@@ -6,9 +6,13 @@ import { Navigator } from './app/pages/Navigator';
 import { LoginProvider, WorkProvider } from './app/contexts';
 import { useFonts } from './app/hooks/useFonts';
 import AppLoading from 'expo-app-loading';
+import { View } from 'react-native';
+import { setStatusBarStyle } from 'expo-status-bar';
 
 export default function App() {
   const { isLoaded } = useFonts();
+
+  setStatusBarStyle('light');
 
   if (!isLoaded) return <AppLoading />;
 

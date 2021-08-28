@@ -9,14 +9,23 @@ import {
   TitleAndItemContainer,
   Title,
 } from './styles';
-import { vh, vw } from '../../../../helpers/units';
+import { Unit } from '../../../../helpers';
 import { ItemContainer } from '../ItemContainer';
-import { Button, Sizes } from '../../../../components';
-import { IInfo } from '../../interfaces';
+import { Button } from '../../../components';
 import { BoostIcon } from '../../../../../assets/svgs/icons';
-import { theme } from '../../../../../configs/constants';
+import { colors } from '../../../../../configs/constants';
+import { IWorkerInfo } from '../../../../interfaces';
+import { Sizes } from '../../../components/enums';
 
-export function InfoSection({ photo, name, job, category, methods }: IInfo) {
+const { vh, vw } = Unit;
+
+export function InfoSection({
+  photo,
+  name,
+  job,
+  category,
+  methods,
+}: IWorkerInfo) {
   return (
     <Container>
       <PictureAndNameContainer>
@@ -29,17 +38,18 @@ export function InfoSection({ photo, name, job, category, methods }: IInfo) {
             {job}
           </Job>
           <Button
-            style={{ marginTop: vh(2) }}
+            style={{ marginTop: vh(2), marginBottom: vh(1.5) }}
             size={Sizes.small}
             width={'100%'}
-            secondary
+            isSecondary
             icon={
               <BoostIcon
-                color={theme.purple}
+                color={colors.purple}
                 style={{ marginLeft: vw(2) }}
-                small
+                size={Sizes.small}
               />
             }
+            onPress={() => console.log('boost pressed')}
           >
             Impulsionar
           </Button>
@@ -53,7 +63,11 @@ export function InfoSection({ photo, name, job, category, methods }: IInfo) {
         <Title>Métodos</Title>
         <ItemContainer children={methods} />
       </TitleAndItemContainer>
-      <Button secondary style={{ marginTop: vh(2) }}>
+      <Button
+        isSecondary
+        style={{ marginTop: vh(2) }}
+        onPress={() => console.log('edit profile pressed')}
+      >
         Editar Perfil
       </Button>
     </Container>

@@ -1,0 +1,1 @@
+export { IFetchData } from './IFetchData';

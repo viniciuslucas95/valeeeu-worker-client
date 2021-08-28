@@ -1,19 +1,20 @@
 import styled from 'styled-components/native';
+import { colors } from '../../../configs/constants';
+import { Unit } from '../../helpers';
 
-import { sizes, theme } from '../../../configs/constants';
-import { vhPx, vwPx } from '../../helpers/units';
+const { vhPx, vwPx } = Unit;
 
 export const Container = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: ${theme.white};
+  background-color: ${colors.white};
 `;
 
 export const OptionsContainer = styled.View`
   flex-direction: row;
   justify-content: space-between;
-  width: ${vwPx(80)};
+  width: ${vwPx(90)};
   height: ${vhPx(3)};
   padding: 0 ${vwPx(1)};
 `;

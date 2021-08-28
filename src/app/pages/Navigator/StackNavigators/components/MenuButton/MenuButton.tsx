@@ -1,23 +1,18 @@
 import React from 'react';
-import { Container } from './styles';
-import { Touchable } from '../../../../../components';
+import { Touchable } from '../../../../components';
 import { MenuIcon } from '../../../../../../assets/svgs/icons';
-import { StyleProp, ViewStyle } from 'react-native';
-import { vw } from '../../../../../helpers/units';
+import { Unit } from '../../../../../helpers';
+import { IStyleable } from '../../../../components/interfaces';
 
-interface IProps {
-  style?: StyleProp<ViewStyle>;
-}
+const { vw } = Unit;
 
-export function MenuButton({ style }: IProps) {
+export function MenuButton({ style }: IStyleable) {
   return (
     <Touchable
-      onPress={() => console.log('Menu pressed')}
+      onPress={() => console.log('menu pressed')}
       style={[{ marginRight: vw(5) }, style]}
     >
-      <Container>
-        <MenuIcon />
-      </Container>
+      <MenuIcon />
     </Touchable>
   );
 }

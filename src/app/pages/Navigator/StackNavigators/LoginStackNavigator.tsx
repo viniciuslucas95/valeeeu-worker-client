@@ -1,9 +1,9 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-
 import { StackScreens } from '../../enums';
 import { LoginPage, CreateAccountPage } from '../..';
-import { Header } from '../../../components';
+import { headerStyle } from './styles';
+import { MenuButton } from './components';
 
 const Stack = createStackNavigator();
 
@@ -14,18 +14,18 @@ export function LoginStackNavigator() {
         name={StackScreens.Login}
         component={LoginPage}
         options={{
-          header: ({ navigation }) => (
-            <Header navigation={navigation} title='Login' secondary />
-          ),
+          headerTitle: 'Login',
+          ...headerStyle,
+          headerRight: () => <MenuButton />,
         }}
       />
       <Stack.Screen
         name={StackScreens.CreateAccount}
         component={CreateAccountPage}
         options={{
-          header: ({ navigation }) => (
-            <Header navigation={navigation} title='Criar Conta' secondary />
-          ),
+          headerTitle: 'Criar Conta',
+          ...headerStyle,
+          headerRight: () => <MenuButton />,
         }}
       />
     </Stack.Navigator>

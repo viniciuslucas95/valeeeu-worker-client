@@ -1,8 +1,10 @@
 import * as React from 'react';
 import Svg, { Rect, Path } from 'react-native-svg';
-import { vw } from '../../../app/helpers/units';
+import { Unit } from '../../../app/helpers';
 import { colors } from '../../../configs';
 import { IProps } from '../interfaces';
+
+const { vw } = Unit;
 
 export function MenuIcon({ color, size, style }: IProps) {
   const fixedSize = (size ?? vw(1)) / 4;
@@ -20,18 +22,18 @@ export function MenuIcon({ color, size, style }: IProps) {
         width={26}
         height={2}
         rx={1}
-        fill={color ?? colors.purple}
+        fill={color ?? colors.white}
       />
       <Rect
         y={9.804}
         width={26}
         height={2}
         rx={1}
-        fill={color ?? colors.purple}
+        fill={color ?? colors.white}
       />
       <Path
         d='M0 1a1 1 0 011-1h24a1 1 0 110 2H1a1 1 0 01-1-1z'
-        fill={color ?? colors.purple}
+        fill={color ?? colors.white}
       />
     </Svg>
   );

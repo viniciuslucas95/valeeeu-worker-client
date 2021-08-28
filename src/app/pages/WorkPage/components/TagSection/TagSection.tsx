@@ -1,8 +1,10 @@
 import React from 'react';
-import { Button } from '../../../../components';
-import { vh } from '../../../../helpers/units';
+import { Button } from '../../../components';
+import { Unit } from '../../../../helpers';
 import { ItemContainer } from '../ItemContainer';
 import { SeparatorContainer } from '../SeparatorContainer';
+
+const { vh } = Unit;
 
 interface IProps {
   tags: string[];
@@ -11,10 +13,15 @@ interface IProps {
 export function TagSection({ tags }: IProps) {
   return (
     <SeparatorContainer separatorText='Palavras-chave'>
-      <ItemContainer bold secondary style={{ marginTop: vh(0.5) }}>
+      <ItemContainer isTextBold isSecondary style={{ marginTop: vh(0.5) }}>
         {tags}
       </ItemContainer>
-      <Button style={{ marginTop: vh(2) }}>Editar</Button>
+      <Button
+        style={{ marginTop: vh(2) }}
+        onPress={() => console.log('edit tag pressed')}
+      >
+        Editar
+      </Button>
     </SeparatorContainer>
   );
 }

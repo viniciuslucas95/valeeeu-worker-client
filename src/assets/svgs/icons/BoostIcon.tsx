@@ -1,8 +1,10 @@
 import * as React from 'react';
 import Svg, { Path } from 'react-native-svg';
-import { vw } from '../../../app/helpers/units';
+import { Unit } from '../../../app/helpers';
 import { colors } from '../../../configs';
 import { IProps } from '../interfaces';
+
+const { vw } = Unit;
 
 export function BoostIcon({ size, style, color }: IProps) {
   const fixedSize = (size ?? vw(1)) / 4;

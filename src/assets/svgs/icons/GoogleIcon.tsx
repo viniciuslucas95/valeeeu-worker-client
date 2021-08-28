@@ -1,7 +1,9 @@
 import * as React from 'react';
 import Svg, { Rect, Path } from 'react-native-svg';
-import { vw } from '../../../app/helpers/units';
+import { Unit } from '../../../app/helpers';
 import { IProps } from '../interfaces';
+
+const { vw } = Unit;
 
 export function GoogleIcon({ size, style }: IProps) {
   const fixedSize = (size ?? vw(1)) / 4;

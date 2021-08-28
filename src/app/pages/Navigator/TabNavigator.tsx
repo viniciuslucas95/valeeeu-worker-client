@@ -6,15 +6,17 @@ import {
   ScheduleStackNavigator,
   LoginStackNavigator,
 } from './StackNavigators';
-import { theme } from '../../../configs/constants';
+import { colors } from '../../../configs/constants';
 import {
   WorkIcon,
   MessageIcon,
   ScheduleIcon,
 } from '../../../assets/svgs/icons';
 import { TabScreens } from '../enums';
-import { vh, vw } from '../../helpers/units';
+import { Unit } from '../../helpers';
 import { loginContext, workContext } from '../../contexts';
+
+const { vh, vw } = Unit;
 
 const Tab = createBottomTabNavigator();
 
@@ -30,20 +32,20 @@ export function TabNavigator() {
             tabBarIcon: ({ focused }) => {
               if (route.name === TabScreens.Work)
                 return (
-                  <WorkIcon active={focused} style={{ bottom: vh(0.25) }} />
+                  <WorkIcon isActive={focused} style={{ bottom: vh(0.25) }} />
                 );
               if (route.name === TabScreens.Message)
                 return (
-                  <MessageIcon active={focused} style={{ top: vh(0.25) }} />
+                  <MessageIcon isActive={focused} style={{ top: vh(0.25) }} />
                 );
               if (route.name === TabScreens.Schedule)
-                return <ScheduleIcon active={focused} />;
+                return <ScheduleIcon isActive={focused} />;
             },
-            tabBarActiveBackgroundColor: theme.purple,
-            tabBarInactiveBackgroundColor: theme.purple,
+            tabBarActiveBackgroundColor: colors.purple,
+            tabBarInactiveBackgroundColor: colors.purple,
             headerShown: false,
             tabBarShowLabel: false,
-            tabBarStyle: { borderTopColor: theme.purpleHighlight },
+            tabBarStyle: { borderTopColor: colors.purpleHighlight },
           })}
         >
           <Tab.Screen
@@ -52,7 +54,7 @@ export function TabNavigator() {
             options={{
               tabBarBadge: '',
               tabBarBadgeStyle: {
-                backgroundColor: isWorking ? theme.green : theme.mediumGray,
+                backgroundColor: isWorking ? colors.green : colors.mediumGray,
                 top: vh(3.5),
                 left: vw(2),
                 width: vh(1.75),

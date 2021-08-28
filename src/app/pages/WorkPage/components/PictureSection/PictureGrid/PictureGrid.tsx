@@ -1,22 +1,15 @@
 import React from 'react';
-import {
-  FlatList,
-  ImageSourcePropType,
-  StyleProp,
-  ViewStyle,
-} from 'react-native';
-import { Touchable } from '../../../../../components';
-import { vh } from '../../../../../helpers/units';
+import { FlatList, ImageSourcePropType } from 'react-native';
+import { Touchable } from '../../../../components';
 import { Picture } from './styles';
+import { IStyleable } from '../../../../components/interfaces';
 
-interface IProps {
-  width: string;
+interface IProps extends IStyleable {
   columns: number;
   pictures: ImageSourcePropType[];
-  style?: StyleProp<ViewStyle>;
 }
 
-export function PictureGrid({ style, pictures, columns, width }: IProps) {
+export function PictureGrid({ style, pictures, columns }: IProps) {
   if (pictures.length === 0) return null;
   if (columns <= 0) columns = 1;
 
@@ -34,7 +27,7 @@ export function PictureGrid({ style, pictures, columns, width }: IProps) {
         flex: 1,
         flexDirection: 'row',
       }}
-      style={{ marginTop: vh(1.5) }}
+      style={style}
     />
   );
 }

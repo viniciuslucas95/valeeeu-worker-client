@@ -1,7 +1,9 @@
 import * as React from 'react';
 import Svg, { Path } from 'react-native-svg';
-import { vw } from '../../../app/helpers/units';
+import { Unit } from '../../../app/helpers';
 import { IProps } from '../interfaces';
+
+const { vw } = Unit;
 
 export function FacebookIcon({ style, size }: IProps) {
   const fixedSize = (size ?? vw(1)) / 4;

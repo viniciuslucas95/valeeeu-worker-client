@@ -1,34 +1,33 @@
 import React, { PropsWithChildren } from 'react';
-import { StyleProp, ViewStyle } from 'react-native';
 import { Container, Text } from './styles';
 import { CircleSvg } from '../../../../../../assets/svgs/CircleSvg';
-import { theme } from '../../../../../../configs/constants';
-import { vw } from '../../../../../helpers/units';
+import { colors } from '../../../../../../configs/constants';
+import { Unit } from '../../../../../helpers';
+import { IColorable, IStyleable } from '../../../../components/interfaces';
+import { IHaveBoldText } from '../interface';
 
-interface IProps {
+const { vw } = Unit;
+
+interface IProps extends IStyleable, IColorable, IHaveBoldText {
   children: string;
-  separator?: boolean;
-  style?: StyleProp<ViewStyle>;
-  secondary?: boolean;
-  bold?: boolean;
+  hasSeparator?: boolean;
 }
 
 export function Item({
   children,
   style,
-  separator,
-  secondary,
-  bold,
+  hasSeparator,
+  isSecondary,
+  isTextBold,
 }: PropsWithChildren<IProps>) {
   return (
     <Container style={style}>
-      <Text secondary={secondary} bold={bold}>
+      <Text isSecondary={isSecondary} isTextBold={isTextBold}>
         {children}
       </Text>
-      {separator ? (
+      {hasSeparator ? (
         <CircleSvg
-          color={secondary ? theme.purple : theme.white}
-          bold={bold}
+          color={isSecondary ? colors.purple : colors.white}
           style={{ marginHorizontal: vw(1.5) }}
         />
       ) : null}

@@ -1,9 +1,11 @@
 import styled from 'styled-components/native';
-import { theme } from '../../../../../configs/constants';
-import { vhPx, vwPx } from '../../../../helpers/units';
+import { colors } from '../../../../../configs/constants';
+import { Unit } from '../../../../helpers';
+
+const { vhPx, vwPx } = Unit;
 
 export const Container = styled.View`
-  background-color: ${theme.purple};
+  background-color: ${colors.purple};
   padding: ${vhPx(2)} ${vwPx(5)};
 `;
 
@@ -21,18 +23,18 @@ export const Photo = styled.Image`
 export const NameContainer = styled.View`
   flex: 1;
   margin-left: ${vwPx(5)};
-  color: ${theme.white};
+  color: ${colors.white};
 `;
 
 export const Name = styled.Text`
-  color: ${theme.white};
+  color: ${colors.white};
   font-family: 'Poppins-Medium';
   font-size: ${vwPx(4)};
   height: ${vwPx(5)};
 `;
 
 export const Job = styled.Text`
-  color: ${theme.white};
+  color: ${colors.white};
   font-family: 'Poppins-LightItalic';
   font-size: ${vwPx(3.5)};
   height: ${vwPx(5)};
@@ -41,14 +43,14 @@ export const Job = styled.Text`
 export const TitleAndItemContainer = styled.View``;
 
 export const Title = styled.Text`
-  color: ${theme.white};
+  color: ${colors.white};
   font-family: 'Poppins-Medium';
   font-size: ${vwPx(3.5)};
   height: ${vwPx(5)};
 `;
 
 export const Text = styled.Text`
-  color: ${theme.white};
+  color: ${colors.white};
   font-family: 'Poppins-LightItalic';
   font-size: ${vwPx(3.5)};
   height: ${vwPx(5)};

@@ -1,6 +1,5 @@
 import React, { PropsWithChildren } from 'react';
-import { Separator } from '../../../../components';
-import { vh } from '../../../../helpers/units';
+import { Separator } from '../../../components';
 import { Container } from './styles';
 
 interface IProps {
@@ -14,7 +13,7 @@ export function SeparatorContainer({
 }: PropsWithChildren<IProps>) {
   return (
     <Container>
-      <Separator secondary>{separatorText}</Separator>
+      <Separator>{separatorText}</Separator>
       {children}
     </Container>
   );

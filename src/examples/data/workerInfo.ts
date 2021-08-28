@@ -1,4 +1,4 @@
-import { IInfo } from '../../app/interfaces';
+import { IWorkerInfo } from '../../app/interfaces';
 
 enum CategoryTypes {
   services = 'Presta serviços',
@@ -12,8 +12,8 @@ enum MethodTypes {
   virtual = 'Virtual',
 }
 
-export const workerInfo: IInfo = {
-  photo: require('../../../test/data/photo.png'),
+export const workerInfo: IWorkerInfo = {
+  photo: require('../images/photo.png'),
   name: 'Flávio Hamilton Stronda',
   job: 'Cuidador de velhas ricas',
   category: [CategoryTypes.services, CategoryTypes.sales],
@@ -27,11 +27,11 @@ export const workerInfo: IInfo = {
   description:
     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
   pictures: [
-    require('../../../../../test/data/car.jpg'),
-    require('../../../../../test/data/panicat.jpg'),
-    require('../../../../../test/data/flower.jpg'),
-    require('../../../../../test/data/mechanic.png'),
-    require('../../../../../test/data/robots.jpg'),
-    require('../../../../../test/data/house.jpg'),
+    require('../images/car.jpg'),
+    require('../images/panicat.jpg'),
+    require('../images/flower.jpg'),
+    require('../images/mechanic.png'),
+    require('../images/robots.jpg'),
+    require('../images/house.jpg'),
   ],
 };

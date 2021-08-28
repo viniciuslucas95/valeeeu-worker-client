@@ -1,20 +1,21 @@
 import styled from 'styled-components/native';
-import { theme } from '../../../../../../configs/constants';
-import { vwPx } from '../../../../../helpers/units';
+import { colors } from '../../../../../../configs/constants';
+import { Unit } from '../../../../../helpers';
+import { IColorable } from '../../../../components/interfaces';
+import { IHaveBoldText } from '../interface';
 
-interface IProps {
-  secondary?: boolean;
-  bold?: boolean;
-}
+const { vwPx } = Unit;
+
+interface IProps extends IColorable, IHaveBoldText {}
 
 export const Container = styled.View`
   flex-direction: row;
 `;
 
 export const Text = styled.Text<IProps>`
-  color: ${({ secondary }) => (secondary ? theme.purple : theme.white)};
-  font-family: ${({ bold }) =>
-    bold ? 'Poppins-MediumItalic' : 'Poppins-LightItalic'};
+  color: ${({ isSecondary }) => (isSecondary ? colors.purple : colors.white)};
+  font-family: ${({ isTextBold }) =>
+    isTextBold ? 'Poppins-MediumItalic' : 'Poppins-LightItalic'};
   font-size: ${vwPx(3.5)};
   height: ${vwPx(5)};
 `;

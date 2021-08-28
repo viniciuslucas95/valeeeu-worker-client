@@ -1,1 +1,1 @@
-export { InfoSection, IInfo } from './InfoSection';
+export { InfoSection } from './InfoSection';

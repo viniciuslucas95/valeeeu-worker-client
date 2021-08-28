@@ -1,1 +1,1 @@
-export { IWorkerInfo as IInfo } from './IInfo';
+export { IWorkerInfo } from './IWorkerInfo';

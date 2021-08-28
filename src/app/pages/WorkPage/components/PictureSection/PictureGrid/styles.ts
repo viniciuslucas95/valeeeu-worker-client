@@ -1,9 +1,7 @@
 import styled from 'styled-components/native';
-import { vwPx } from '../../../../../helpers/units';
+import { Unit } from '../../../../../helpers';
 
-interface IProps {
-  width: string;
-}
+const { vwPx } = Unit;
 
 export const Picture = styled.Image`
   width: ${vwPx(28)};
