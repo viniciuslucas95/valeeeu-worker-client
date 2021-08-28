@@ -39,14 +39,12 @@ export function CheckBoxSvg({
         height={14}
         rx={7}
         fill={
-          isChecked
-            ? checkedColor ?? colors.whiteHighlight
-            : color ?? colors.white
+          isChecked ? checkedColor ?? colors.darkGray : color ?? colors.white
         }
         stroke={
           isChecked
-            ? checkedStrokeColor ?? colors.purpleHighlight
-            : strokeColor ?? colors.purple
+            ? checkedStrokeColor ?? colors.darkGray
+            : strokeColor ?? colors.mediumGray
         }
         strokeWidth={1}
       />
