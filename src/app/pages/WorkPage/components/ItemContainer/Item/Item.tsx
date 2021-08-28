@@ -6,7 +6,7 @@ import { Unit } from '../../../../../helpers';
 import { IColorable, IStyleable } from '../../../../components/interfaces';
 import { IHaveBoldText } from '../interface';
 
-const { vw } = Unit;
+const { vw, vh } = Unit;
 
 interface IProps extends IStyleable, IColorable, IHaveBoldText {
   children: string;
@@ -28,7 +28,10 @@ export function Item({
       {hasSeparator ? (
         <CircleSvg
           color={isSecondary ? colors.purple : colors.white}
-          style={{ marginHorizontal: vw(1.5) }}
+          style={{
+            marginHorizontal: vw(1.5),
+            top: isTextBold ? vh(0.2) : vh(0.1),
+          }}
         />
       ) : null}
     </Container>
