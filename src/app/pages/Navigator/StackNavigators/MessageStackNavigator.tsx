@@ -11,7 +11,7 @@ export function MessageStackNavigator() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name={StackScreens.Message}
+        name={StackScreens.Messages}
         component={MessagePage}
         options={{
           headerTitle: 'Mensagens',

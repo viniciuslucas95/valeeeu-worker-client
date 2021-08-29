@@ -11,7 +11,7 @@ export function ScheduleStackNavigator() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name={StackScreens.Schedule}
+        name={StackScreens.Schedules}
         component={SchedulePage}
         options={{
           headerTitle: 'Agendamentos',

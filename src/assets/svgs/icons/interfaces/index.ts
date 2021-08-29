@@ -1,1 +1,0 @@
-export { ITabIcon } from './ITabIcon';

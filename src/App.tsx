@@ -2,27 +2,31 @@ import 'react-native-gesture-handler';
 import { registerRootComponent } from 'expo';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { Navigator } from './app/pages/Navigator';
-import { LoginProvider, WorkProvider } from './app/contexts';
+import { StackNavigator } from './app/pages/Navigator/StackNavigators/StackNavigator';
+import { LoginProvider } from './app/contexts';
 import { useFonts } from './app/hooks/useFonts';
 import AppLoading from 'expo-app-loading';
-import { View } from 'react-native';
-import { setStatusBarStyle } from 'expo-status-bar';
+import {
+  setStatusBarStyle,
+  setStatusBarBackgroundColor,
+  setStatusBarTranslucent,
+} from 'expo-status-bar';
+import { colors } from './configs';
 
 export default function App() {
   const { isLoaded } = useFonts();
 
   setStatusBarStyle('light');
+  setStatusBarTranslucent(false);
+  setStatusBarBackgroundColor(colors.purple, false);
 
   if (!isLoaded) return <AppLoading />;
 
   return (
     <LoginProvider>
-      <WorkProvider>
-        <NavigationContainer>
-          <Navigator />
-        </NavigationContainer>
-      </WorkProvider>
+      <NavigationContainer>
+        <StackNavigator />
+      </NavigationContainer>
     </LoginProvider>
   );
 }

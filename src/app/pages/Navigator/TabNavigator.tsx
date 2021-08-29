@@ -14,15 +14,14 @@ import {
 } from '../../../assets/svgs/icons';
 import { TabScreens } from '../enums';
 import { Unit } from '../../helpers';
-import { loginContext, workContext } from '../../contexts';
+import { loginContext } from '../../contexts';
 
-const { vh, vw } = Unit;
+const { vh } = Unit;
 
 const Tab = createBottomTabNavigator();
 
 export function TabNavigator() {
   const { account } = useContext(loginContext);
-  const { isWorking } = useContext(workContext);
 
   return (
     <>
@@ -45,27 +44,12 @@ export function TabNavigator() {
             tabBarInactiveBackgroundColor: colors.purple,
             headerShown: false,
             tabBarShowLabel: false,
-            tabBarStyle: { borderTopColor: colors.purpleHighlight },
+            tabBarStyle: {
+              borderTopColor: colors.purpleHighlight,
+            },
           })}
         >
-          <Tab.Screen
-            name={TabScreens.Work}
-            component={WorkStackNavigator}
-            options={{
-              tabBarBadge: '',
-              tabBarBadgeStyle: {
-                backgroundColor: isWorking ? colors.green : colors.mediumGray,
-                top: vh(3.5),
-                left: vw(2),
-                width: vh(1.75),
-                height: vh(1.75),
-                minWidth: 0,
-                minHeight: 0,
-                borderRadius: vh(1),
-                opacity: isWorking ? 1 : 0,
-              },
-            }}
-          />
+          <Tab.Screen name={TabScreens.Work} component={WorkStackNavigator} />
           <Tab.Screen
             name={TabScreens.Message}
             component={MessageStackNavigator}

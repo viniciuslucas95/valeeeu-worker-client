@@ -8,8 +8,10 @@ export const headerStyle: StackNavigationOptions = {
   headerTintColor: colors.white,
   headerTitleStyle: {
     color: colors.white,
-    fontFamily: 'Poppins-Light',
+    fontFamily: 'Poppins-Regular',
     top: vh(0.125),
   },
-  headerStyle: { backgroundColor: colors.purple },
+  headerStyle: {
+    backgroundColor: colors.purple,
+  },
 };
