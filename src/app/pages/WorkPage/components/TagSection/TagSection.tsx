@@ -1,8 +1,12 @@
 import React from 'react';
-import { Button } from '../../../components';
-import { Unit } from '../../../../helpers';
-import { ItemContainer } from '../ItemContainer';
-import { SeparatorContainer } from '../SeparatorContainer';
+import {
+  Button,
+  HorizontalTextList,
+  SeparatorContainer,
+} from '../../../../../shared/app/components';
+import { Fonts } from '../../../../../shared/app/enums';
+import { Unit } from '../../../../../shared/app/helpers';
+import { colors } from '../../../../../shared/configs';
 
 const { vh } = Unit;
 
@@ -12,10 +16,13 @@ interface IProps {
 
 export function TagSection({ tags }: IProps) {
   return (
-    <SeparatorContainer separatorText='Palavras-chave'>
-      <ItemContainer isTextBold isSecondary style={{ marginTop: vh(0.5) }}>
-        {tags}
-      </ItemContainer>
+    <SeparatorContainer title='Palavras-chave'>
+      <HorizontalTextList
+        isSecondary
+        style={{ marginTop: vh(0.5) }}
+        font={Fonts.mediumItalic}
+        texts={tags}
+      />
       <Button
         style={{ marginTop: vh(2) }}
         onPress={() => console.log('edit tag pressed')}

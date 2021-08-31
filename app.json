@@ -6,9 +6,9 @@
     "orientation": "portrait",
     "scheme": "com.viniciuslucas95.valeeeu",
     "facebookScheme": "fb475115013540188",
-    "icon": "./src/assets/images/icon.png",
+    "icon": "./src/shared/assets/images/icon.png",
     "splash": {
-      "image": "./src/assets/images/icon.png",
+      "image": "./src/shared/assets/images/icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#834FD9"
     },
@@ -23,7 +23,7 @@
     "android": {
       "package": "com.viniciuslucas95.valeeeu",
       "adaptiveIcon": {
-        "foregroundImage": "./src/assets/images/adaptive-icon.png",
+        "foregroundImage": "./src/shared/assets/images/adaptive-icon.png",
         "backgroundColor": "#834FD9"
       }
     }

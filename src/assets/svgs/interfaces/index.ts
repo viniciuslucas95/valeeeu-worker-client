@@ -1,1 +1,0 @@
-export { IProps } from './IProps';

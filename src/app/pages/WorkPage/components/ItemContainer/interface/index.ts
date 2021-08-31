@@ -1,1 +1,0 @@
-export { IHaveBoldText } from './IHaveBoldText';

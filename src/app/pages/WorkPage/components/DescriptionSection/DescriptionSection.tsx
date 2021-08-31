@@ -1,8 +1,11 @@
 import React from 'react';
-import { Button } from '../../../components';
-import { Unit } from '../../../../helpers';
-import { SeparatorContainer } from '../SeparatorContainer';
-import { Text } from './styles';
+import {
+  Button,
+  SeparatorContainer,
+} from '../../../../../shared/app/components';
+import { Unit } from '../../../../../shared/app/helpers';
+import { LightText } from '../../../../../shared/app/styledComponents/Texts';
+import { colors } from '../../../../../shared/configs';
 
 const { vh } = Unit;
 
@@ -12,8 +15,10 @@ interface IProps {
 
 export function DescriptionSection({ text }: IProps) {
   return (
-    <SeparatorContainer separatorText='Descrição'>
-      <Text style={{ marginTop: vh(1) }}>{text}</Text>
+    <SeparatorContainer title='Descrição'>
+      <LightText color={colors.purple} style={{ marginTop: vh(1) }}>
+        {text}
+      </LightText>
       <Button
         style={{ marginTop: vh(2), marginBottom: vh(2) }}
         onPress={() => console.log('edit description pressed')}

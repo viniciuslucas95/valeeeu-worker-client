@@ -1,1 +1,0 @@
-export { headerStyle } from './headerStyle';

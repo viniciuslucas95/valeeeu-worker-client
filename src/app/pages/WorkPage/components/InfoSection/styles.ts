@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
-import { colors } from '../../../../../configs/constants';
-import { Unit } from '../../../../helpers';
+import { colors } from '../../../../../shared/configs/constants';
+import { Unit } from '../../../../../shared/app/helpers';
 
 const { vhPx, vwPx } = Unit;
 

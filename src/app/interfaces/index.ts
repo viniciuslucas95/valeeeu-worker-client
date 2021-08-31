@@ -1,1 +1,0 @@
-export { IWorkerInfo } from './IWorkerInfo';

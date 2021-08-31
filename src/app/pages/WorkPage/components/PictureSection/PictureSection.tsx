@@ -1,10 +1,13 @@
 import React from 'react';
 import { ImageSourcePropType } from 'react-native';
-import { Button } from '../../../components';
-import { Unit } from '../../../../helpers';
-import { SeparatorContainer } from '../SeparatorContainer';
-import { PictureGrid } from './PictureGrid';
-import { ButtonsContainer } from './styles';
+import {
+  Button,
+  HorizontalContainer,
+  PictureGrid,
+  SeparatorContainer,
+} from '../../../../../shared/app/components';
+import { FlexDistribution } from '../../../../../shared/app/enums';
+import { Unit } from '../../../../../shared/app/helpers';
 
 const { vh, vwPx } = Unit;
 
@@ -14,13 +17,16 @@ interface IProps {
 
 export function PictureSection({ pictures }: IProps) {
   return (
-    <SeparatorContainer separatorText='Fotos'>
+    <SeparatorContainer title='Fotos'>
       <PictureGrid
         style={{ marginTop: vh(2) }}
         pictures={pictures}
         columns={3}
       />
-      <ButtonsContainer style={{ marginTop: vh(1) }}>
+      <HorizontalContainer
+        style={{ marginTop: vh(1) }}
+        flexDistribution={FlexDistribution.spaceBetween}
+      >
         {pictures.length > 6 ? (
           <Button
             width={vwPx(44)}
@@ -36,7 +42,7 @@ export function PictureSection({ pictures }: IProps) {
         >
           Editar
         </Button>
-      </ButtonsContainer>
+      </HorizontalContainer>
     </SeparatorContainer>
   );
 }

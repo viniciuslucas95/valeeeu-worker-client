@@ -9,13 +9,15 @@ import {
   TitleAndItemContainer,
   Title,
 } from './styles';
-import { Unit } from '../../../../helpers';
-import { ItemContainer } from '../ItemContainer';
-import { Button } from '../../../components';
-import { BoostIcon } from '../../../../../assets/svgs/icons';
-import { colors } from '../../../../../configs/constants';
-import { IWorkerInfo } from '../../../../interfaces';
-import { Sizes } from '../../../components/enums';
+import { Unit } from '../../../../../shared/app/helpers';
+import { BoostIcon } from '../../../../../shared/assets/svgs/icons';
+import { colors } from '../../../../../shared/configs/constants';
+import { IWorkerInfo } from '../../../../../shared/app/interfaces';
+import {
+  Button,
+  HorizontalTextList,
+} from '../../../../../shared/app/components';
+import { Fonts, Sizes } from '../../../../../shared/app/enums';
 
 const { vh, vw } = Unit;
 
@@ -55,17 +57,19 @@ export function InfoSection({
           </Button>
         </NameContainer>
       </PictureAndNameContainer>
-      <TitleAndItemContainer style={{ marginTop: vh(1.5) }}>
-        <Title>Categorias</Title>
-        <ItemContainer children={category} />
-      </TitleAndItemContainer>
-      <TitleAndItemContainer style={{ marginTop: vh(1.5) }}>
-        <Title>Métodos</Title>
-        <ItemContainer children={methods} />
-      </TitleAndItemContainer>
+      <HorizontalTextList
+        texts={category}
+        font={Fonts.regular}
+        style={{ marginTop: vh(1.5) }}
+      />
+      <HorizontalTextList
+        texts={methods}
+        font={Fonts.lightItalic}
+        style={{ marginVertical: vh(0.5) }}
+      />
       <Button
         isSecondary
-        style={{ marginTop: vh(2) }}
+        style={{ marginTop: vh(1) }}
         onPress={() => console.log('edit profile pressed')}
       >
         Editar Perfil
